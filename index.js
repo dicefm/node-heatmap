@@ -77,8 +77,8 @@ Heat.prototype.addPoint = function (x, y, params) {
     
     var g = ctx.createRadialGradient(x, y, 0, x, y, radius);
     var a = params.weight || (1 / 10);
-    
-    g.addColorStop(0, 'rgba(255,255,255,' + a + ')');
+
+    g.addColorStop(0, 'rgba(255,255,255,' + (a * 2) + ')');
     g.addColorStop(1, 'rgba(255,255,255,0)');
     
     ctx.fillStyle = g;
