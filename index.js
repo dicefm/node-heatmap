@@ -105,12 +105,13 @@ Heat.prototype.draw = function () {
             
             var v = values.data[vi + 3];
             if (v > this.threshold) {
-                var theta = (1 - v / 255) * 270;
-                var rgb = convert.hsl2rgb(theta, 100, 50);
+                var theta = (1 - v / 255) * 1;
+                var lightness = Math.ceil((v / 20) + 10);
+                var rgb = convert.hsl2rgb(theta, 255, lightness);
                 heat.data[hi] = rgb[0];
                 heat.data[hi+1] = rgb[1];
                 heat.data[hi+2] = rgb[2];
-                heat.data[hi+3] = v;
+                heat.data[hi+3] = v * 1.5;
             }
         }
     }
